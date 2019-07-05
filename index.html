@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EXPENSE MANAGER</title>
+     <style type="text/css">
+		div{
+			color: white; 
+			background-image:url("bac.jpg");
+			font-family: Verdana;
+			border: 10px solid black;
+			padding: 50px;
+			margin: 20px;
+			align-items: center;
+	    }
+		table{
+            border-collapse: collapse;
+        }
+        table, td, th {
+          border:  solid black;
+          height: 20px;
+          width: 400px;
+        }
+	</style>
+<body>
+   <center>
+		<div>
+			<h1 style="color: white"> Expense Manager</h1>
+			<input type="text" id= "dis" style="width: 200px;height:40px;border: solid;font-size: 25px;color:darkgreen;color:black;"/></span>
+       	    <input type="text" id="incm"  style="width: 200px;height:40px;border: solid;font-size: 25px;color: darkgreen;"/><span>
+	        <button onclick="income()" style="width: 200px;height: 50px;font-size:25px;color:#2F4F4F;background-color: coral;">Add Income</button><br><br>	
+            <input type="text" id= "key"  style="width: 200px;height:40px;border: solid;font-size: 25px;color:darkgreen;color:black;"/><span>       
+		    <input type="text" id="exp"  style="width: 200px;height:40px;border: solid;font-size: 25px;color: darkgreen;"/><span>  
+			<button onclick="expense()" style="width:200px;height: 50px;font-size:25px;color:#2F4F4F;background-color:coral;">Add Expense</button><br><br>
+        	<button onclick="save()" style="width:200px;height: 40px;font-size:25px;color:black;background-color:#5F9EA0 ;">Save</button><span>
+		    <button onclick="total()" style="width: 200px;height: 40px;font-size:25px;color:white;background-color: #556B2F;">Total</button></span><br><br>  
+            <input type="text" id= "result" style="width: 200px;height:40px;border: solid;font-size: 25px;color:darkgreen;color:black;"/></span><br><br>
+       	    <table>
+                <tr>
+                	<th  >Income</th>
+                    <th id="expense">Expense </th>
+                    <th id="tot"> Total </th>
+                 </tr>
+            </table>
+		</div>
+    </center>
+    <script> 
+        function expense(){           
+         	var exp = document.getElementById("exp").value;         
+            var key = document.getElementById("key").value;
+            
+            document.getElementById("result").value = key +"-"
+            document.getElementById("result").value += exp 
+             
+		}
+	    function income(){
+			
+         	var inm = document.getElementById("incm").value; 
+            var dis = document.getElementById("dis").value;
+            
+            document.getElementById("result").value += dis +"-" 
+         	document.getElementById("result").value += inm 
+         	
+		}
+		function save(){
+			var sub = document.getElementById("incm").value;
+			var dis1 = document.getElementById("exp").value;
+			var tot  = document.getElementById("num").value;
+
+     	    document.getElementById("income").innerHTML += sub 
+     	    document.getElementById("expense").innerHTML += dis1 
+     	    document.getElementById("tot").innerHTML += tot 
+		}
+		var num
+		function total(){
+			var num1 = document.getElementById("incm").value;
+			var num2 = document.getElementById("exp").value; 
+			num = (num1 - num2)
+
+			alert("Keep Saving");
+            document.getElementById("result").value = " Balance - " + num         
+		}
+			
+</script>
+</html>
